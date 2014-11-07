@@ -51,8 +51,8 @@
                 <td><?php echo $value1["invoiceDuedate"];?></td>
                 <td>
                   <a href="edit-invoice.php?id=<?php echo $value1["invoiceID"];?>"><i class="fa fa-pencil-square-o btn-action" data-toggle="tooltip" data-placement="left" title="View & edit invoice"></i></a>
-                  <i class="fa fa-download btn-action" data-toggle="tooltip" data-placement="left" title="Download PDF"></i>
-                  <i class="fa fa-envelope btn-action" data-toggle="tooltip" data-placement="left" title="Send to email"></i>
+                  <a href="edit-invoice.php?id=<?php echo $value1["invoiceID"];?>#action-buttons"><i class="fa fa-download btn-action" data-toggle="tooltip" data-placement="left" title="Download PDF"></i></a>
+                  <a href="edit-invoice.php?id=<?php echo $value1["invoiceID"];?>#action-buttons"><i class="fa fa-envelope btn-action" data-toggle="tooltip" data-placement="left" title="Send to email"></i></a>
                   <a href="?action=delete&id=<?php echo $value1["invoiceID"];?>" class="confirm"><i class="fa fa-trash btn-action" ></i></a>
                 </td>
               </tr>
