@@ -326,7 +326,7 @@ function generateInvoice($userID,
             }
             
             //header("location: http://www.google.com");
-            $mpdf->Output('uploads/invoices/'.$invoice_filename, 'F');
+            $mpdf->Output('/var/www/html/invntry/uploads/invoices/'.$invoice_filename, 'F');
             
             $query = mysqli_query($db, "SELECT setInvoiceAddress, setDefaultName, setDefaultSubject, setDefaultEmail, setDefaultMsg FROM invntry_users WHERE userID='".mysqli_real_escape_string($db, $_SESSION['login_userId'])."'") or die(mysqli_error($db));
             $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
