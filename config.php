@@ -3,7 +3,7 @@ global $db;
 global $productid;
 
 // Your database login: host, user, password, database
-$db = mysqli_connect("68.178.143.52", "invntrydatabase", "Jalanpemuda#60", "invntrydatabase");
+$db = mysqli_connect("128.199.219.165", "colorblindlabs", "Jalanpemuda#60-70", "invntry.db");
 
 if (mysqli_connect_errno($db)) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
