@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <title><?php if ($pageTitle != '') { echo $pageTitle . ' - '; } ?>Invntry</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Bootstrap stylesheet -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Bootstrap Flat stylesheet -->
+    <link href="assets/css/bootstrap-flat.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Admin stylesheet -->
+    <link href="assets/css/invoiceFormAdmin.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    
+    <!-- jQuery Form Validator -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.34/jquery.form-validator.min.js"></script>
+    
+    <!-- jQuery Barrating plugin -->
+    <script src="assets/js/jquery.barrating.js"></script>
+    
+    <!-- jQuery Datatables plugin -->
+    <script src="assets/js/jquery.dataTables.js"></script>
+    
+    <!-- StarReviews Admin -->
+    <script src="assets/js/invoiceFormAdmin.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Static navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.php">InvoiceForm</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+           <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invoices <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">New invoice</a></li>
+          <li><a href="#">All invoices</a></li>
+
+        </ul>
+      </li>
+          <li <?php if (!isset($_GET['action'])) { ?>class="active"<?php } ?>><a href="index.php">Invoices</a></li>
+          <li <?php if (isset($_GET['action'])) if ($_GET['action'] == "all-reviews") { ?>class="active"<?php } ?>><a href="index.php?action=all-reviews">Items</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+        <!--<form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Keyword...">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>-->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.php?logout=1">Logout</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="page-header">
+      <h2><?php echo $pageTitle; ?></h2>
+    </div>
+
+    <div class="row rating-example">
+      <div class="col-md-12 "><?php echo $pageContent; ?></div>
+    </div>
+
+  </div>
+  
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    !function ($) {
+
+      $(function(){
+
+        // popover
+        $("[data-toggle=popover]").popover()
+
+      })
+
+    }(jQuery)
+  </script>
+  
+</body>
+
+</html>

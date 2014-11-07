@@ -1,0 +1,119 @@
+{include="header"}
+      
+      <style type="text/css">
+        .delete-logo {
+            display: none;
+            margin-top: 10px;
+            border: 2px solid #178cd9 !important;
+            color: #178cd9 !important;
+            border-radius: 0;
+        }
+
+        .navbar-default, .footer{
+            display: none;
+        }
+    </style>
+
+  <div class="bg-modal-editClient">
+
+      {if="$successMsg != ''"}
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          {$successMsg}
+        </div>
+      {/if}
+      {if="$errorMsg != ''"}
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          {$errorMsg}
+        </div>
+      {/if}
+
+      <form class="form-horizontal" role="form" method="post" action="">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="clients.php" class="close-modal">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>  
+        <div class="row row-centered">
+            <div class="col-lg-12">
+            <h1 class="modal-title"><i class="fa fa-pencil-square-o"></i> Edit CLIENT</h1>
+            </div>
+        </div>
+        <div class="row row-centered">
+            <div class="col-lg-5 col-centered">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group width-input">
+                    <input type="text" name="clientFirstname" id="clientFirstname" class="form-control" value="{$clientFirstname}">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="input-group width-input">
+                    <input type="text" name="clientLastname" id="clientLastname" class="form-control" value="{$clientLastname}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group width-input">
+                    <input type="text" name="clientCompany" id="clientCompany" class="form-control" value="{$clientCompany}">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="input-group width-input">
+                    <input type="text" class="form-control" name="clientEmailaddress" id="clientEmailaddress" value="{$clientEmailaddress}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientAddress1" id="clientAddress1" value="{$clientAddress1}">
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientAddress2" id="clientAddress2" value="{$clientAddress2}">
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientZipcode" id="clientZipcode" value="{$clientZipcode}">
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientCity" id="clientCity" value="{$clientCity}">
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientCountry" id="clientCountry" value="{$clientCountry}">
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group width-input">
+                  <input type="text" class="form-control" name="clientPhonenumber" id="clientPhonenumber" value="{$clientPhonenumber}">
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row row-centered" >
+            <div class="col-lg-12">
+                <button type="submit" name="Submit" id="Submit" class="btn btn-default btn-save-product" style="margin-left: 462px;border-radius:0;"><i class="fa fa-floppy-o"></i> &nbsp;Save</button>
+                
+            </div>
+        </div>
+      </form>
+  </div>
+{include="footer"}

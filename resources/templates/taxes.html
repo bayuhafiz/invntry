@@ -1,0 +1,58 @@
+{include="header"}
+
+  <div class="row row-centered">
+    <div class="col-lg-9 col-centered">
+      <div class="table-responsive">
+
+      {if="$successMsg != ''"}
+        <div class="alert alert-success alert-dismissable">
+       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+       {$successMsg}
+       </div>
+       {/if}
+      {if="$errorMsg != ''"}<div class="alert alert-danger alert-dismissable">
+       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+       {$errorMsg}
+       </div>
+       {/if}
+  
+      
+      {if="$taxes != ''"}
+        <table class="table table-hover table-striped" id="example">
+            <thead>
+                <tr> 
+                    <th>Name</th>
+                    <th>Rate</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                  <th class="th_head">FIRST NAME</th>
+                  <th class="th_head">LAST NAME</th>
+                  <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {loop="taxes"}
+                <tr>
+                    <td>{$value.taxName}</td>
+                    <td>{$value.taxRate}</td>
+                    <td>
+                        <a href="taxes-edit.php?id={$value.taxID}"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href="#" class="confirm" data-taxid="{$value.taxID}" data-taxname="{$value.taxName}"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {/loop}
+            </tbody>
+        </table>
+        {/if}
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-centered">
+    <div class="col-lg-9 col-centered" style="margin-top:65px;">
+      <a href="taxes-add.php"><button class="btn btn-default"><i class="fa fa-money"></i> Add taxrate</button></a>
+    </div>
+  </div>
+
+{include="footer"}

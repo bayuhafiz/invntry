@@ -1,0 +1,71 @@
+{include="header"}
+
+  <div class="row row-centered">
+    <div class="col-lg-9 col-centered">
+      <div class="table-responsive">
+
+        {if="$successMsg != ''"}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {$successMsg}
+          </div>
+        {/if}
+        {if="$errorMsg != ''"}
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {$errorMsg}
+          </div>
+        {/if}
+
+        {if="$clients != ''"}
+          <table class="table table-hover table-striped" id="example">
+              <thead>
+                <tr>
+                  <th>FIRST NAME</th>
+                  <th>LAST NAME</th>
+                  <th>CITY</th>
+                  <th>PHONE</th>
+                  <th>EMAIL</th>
+                  <th>ACTIONS</th>
+                </tr>
+                <tr>
+                  <th class="th_head">FIRST NAME</th>
+                  <th class="th_head">LAST NAME</th>
+                  <th class="th_head">CITY</th>
+                  <th class="th_head">PHONE</th>
+                  <th class="th_head">EMAIL</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {loop="clients"}
+
+                  <tr>
+                    <td class="bold">{$value.clientFirstname}</td>
+                    <td class="bold">{$value.clientLastname}</td>
+                    <td>{$value.clientCity}</td>
+                    <td>{$value.clientPhonenumber}</td>
+                    <td>{$value.clientEmail}</td>            
+                    <td>
+                      <a href="clients-edit.php?id={$value.clientID}"><i class="fa fa-pencil-square-o btn-action"></i></a>
+                      <a href="?action=delete&id={$value.clientID}" class="confirm"><i class="fa fa-trash btn-action"></i></a>
+                    </td>
+                  </tr>
+                {/loop}
+              </tbody>
+          </table>
+        {/if}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-centered" style="margin-top:40px;margin-bottom:150px;">
+    <div class="col-lg-9 col-centered">
+      <a href="clients-add.php"><button type="button" class="btn btn-default btn-add-client"><i class="fa fa-building-o"></i> &nbsp;Add Client</button>
+    </div>
+  </div>
+
+{include="footer"}
+
+

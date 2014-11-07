@@ -1,0 +1,95 @@
+{include="header"}
+
+  <div class="row row-centered">
+    <form action="create-invoice.php" method="POST">
+    <div class="col-lg-9 col-centered">
+      <div class="table-responsive">
+
+          {if="$successMsg != ''"}
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {$successMsg}
+            </div>
+          {/if}
+
+          {if="$errorMsg != ''"}
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {$errorMsg}
+            </div>
+          {/if}
+
+          {if="$items != ''"}
+            <table class="table table-hover table-striped" id="example">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>NAME</th>
+                  <th>DESCRIPTION</th>
+                  <th>CATEGORY</th>
+                  <th>QTY</th>
+                  <th>PRICE</th>
+                  <th>ACTIONS</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="th_head">NAME</th>
+                  <th class="th_head">DESCRIPTION</th>
+                  <th class="th_head">CATEGORY</th>
+                  <th class="th_head">QTY</th>
+                  <th class="th_head">PRICE</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="tbodyItems">
+                {loop="items"}
+                      
+                <tr>
+                  <td class="borderLeft"><input type="checkbox" class="foo" name="check_list[]" value="{$value.itemID}"></td>
+                  <td class="bold">{$value.itemName}</td>
+                  <td>{$value.itemDescription}</td>
+                  <td>{$value.itemCategory}</td>
+                  <td>{$value.itemQuantity}</td>
+                  <td>{$currency} {$value.itemPrice}</td>
+                  <td>
+                    {if="$value.itemImage != ''"}
+                      <a href="{$value.itemImage}" data-lightbox="{$value.itemImage}"><i class="fa fa-search btn-action-search" data-toggle="tooltip1" data-placement="left" title="Click to view image" style="padding-right: 10px;"></i></a>
+                    {else}
+                       <i class="fa fa-search btn-action-search" data-toggle="tooltip1" data-placement="left" title="Click to view image" style="padding-right: 10px;"></i>
+                    {/if}
+                      <a href="items-edit.php?id={$value.itemID}"><i class="fa fa-pencil-square-o btn-action" data-toggle="tooltip2" data-placement="left" title="Click to edit product"></i></a>
+                      <a href="?action=delete&id={$value.itemID}" class="confirm">
+                        <i class="fa fa-trash btn-action"></i>
+                      </a>
+                      <!-- <i class="fa fa-plus btn-action btn-collpase" data-toggle="collapse" data-target="#accordion" ></i> -->
+                  </td>
+                </tr>
+                {/loop}
+              </tbody>
+            </table>
+          {/if}
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-centered" style="margin-top:50px;margin-bottom:150px;">
+    <!-- <div class="col-lg-6">
+        <button type="button" class="btn btn-default btn-add-product" style="right: 100px;border-radius:0;"><i class="fa fa-building-o"></i> &nbsp;Add Product
+        </button>
+    </div> -->
+    <div class="col-lg-4 col-centered">
+        <a href="items-add.php"><button type="button" class="btn btn-default btn-add-product pull-left" ><i class="fa fa-building-o"></i> &nbsp;Add Product</button></a>
+    </div>
+    <div class="col-lg-4 col-centered">
+      <button type="submit" class="btn btn-default btn-create-order pull-right" disabled="disabled"><i class="fa fa-shopping-cart"></i> &nbsp;Create Order</button>
+    </div>
+    <div id="count"></div>
+  </form>
+  </div>
+
+
+{include="footer"}
+
+
