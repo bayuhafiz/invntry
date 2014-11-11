@@ -1,7 +1,9 @@
 <?php
-include("config.php");
-
+  include("config.php");
+  header('Content-Type:application/json');
+  
   $query = mysqli_query($db, "SELECT * FROM invntry_items ORDER BY itemName") or die(mysql_error($db));
+
 
   while ($fetch = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $cities[] = array(
@@ -27,6 +29,9 @@ include("config.php");
   }   
 
   $matches = array_slice($matches, 0, 5); 
-  print json_encode($matches);
+
+  echo json_encode($matches);
+
+  
 
 ?>

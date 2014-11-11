@@ -101,12 +101,16 @@
                                 {loop="$items"}
                                 <tr>
                                     <td>
+                                        <!--<select name="itemName[]" data-placeholder="Choose an item..." class="chosen-select" style="width:200px;" tabindex="2">
+                                            <option value=""></option>
+                                            <option value="{$value.itemName}" class="tableItemName" id="tableItemName" selected>{$value.itemName}</option>
+                                          </select>-->
                                         <input type="text" name="itemName[]" class="tableItemName" id="tableItemName" value="{$value.itemName}" placeholder="item" required>
                                     </td>
                                     <td>
                                         <input type="text" name="itemDescription[]" class="tableItemDescription" id="tableItemDescription" value="{$value.itemDescription}" placeholder="description" required>
                                     </td>
-                                    <td>{$currency} <input type="text" name="itemPrice[]" id="tableItemPrice" class="itemPrice tableItemPrice" value="{$value.itemPrice}" placeholder="0">
+                                    <td><input type="text" name="itemPrice[]" id="tableItemPrice" class="itemPrice tableItemPrice" value="{$value.itemPrice}" placeholder="0">
                                     </td>
                                     <td>
                                         <input type="text" name="itemQuantity[]" id="tableItemQuantity" class="itemQuantity itemNumeric tableItemQuantity" value="{$value.itemQuantity}" placeholder="0">
@@ -115,7 +119,7 @@
                                         <input type="hidden" name="hiddenItemQty[]" class="hiddenItemQty" value="{$value.hiddenQty}">
                                         <input type="hidden" name="hiddenSavedQty[]" class="hiddenSavedQty" value="{$value.itemQuantity}">
                                     </td>
-                                    <td>{$currency} 
+                                    <td>
                                         <span id="tableItemTotal" class="totalItem itemTotal">{$value.itemPriceTotal}</span>
                                         <input type="hidden" class="totalItem{$value.itemID}" name="itemTotal[]" value="{$value.itemPriceTotal}" placeholder="0">
                                         
@@ -139,14 +143,14 @@
             </div>
         </div>
         <div class="row row-centered">
-            <div class="col-lg-4" style="left: 100px;text-align: left;">
+            <div class="col-lg-3" style="left: 100px;text-align: left;">
                 <p>Bank:<br/>
                 {$bankAccount}</p>
             </div>
-            <div class="col-lg-4" style="text-align: float:right;right;border-right:1px solid #181818;">
-                <h6>SUBTOTAL {$currency} <span id="subTotal" class="subTotal">{$invoiceSubtotal}</span></h6>
+            <div class="col-lg-4" style="text-align:right;border-right:1px solid #181818;">
+                <h5>SUBTOTAL {$currency} <span id="subTotal" class="subTotal">{$invoiceSubtotal}</span></h5>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" value="" name="subTotal">
-                <h6>TAXES/FEES
+                <h5>TAXES/FEES
                     <select class="taxes" name="taxes" id="taxes">
                          <option value="0">Select Tax Rate</option>
                         {loop="taxes"}
@@ -158,10 +162,10 @@
                         {/loop}
                     </select> 
                     {$currency} <span class="taxesValue" id="taxValue"> {$invoiceTax}</span>
-                </h6>
+                </h5>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue" value="{$invoiceTax}">
             </div>
-            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem">{$currency} <span id="sumTotal">{$invoiceTotal}</span></h1>
                 <input type="hidden" class="sumTotal" id="sumTotalHidden" value="" name="sumTotal">
             </div>

@@ -16,9 +16,9 @@ function mkSafe($text)
 if (isset($_GET['check'])) {
     if ($_GET['check'] == "login") {
         if (isLoggedin($db) == true) {
-            header("location: items.php");
+            echo 'true';
         } else {
-            header("location: login.php");
+            echo 'false';
         }
     } 
 } elseif (isset($_GET['logout'])) {
@@ -39,10 +39,10 @@ if (isset($_GET['check'])) {
             $_SESSION['login_userfname']   = $row['userFullname'];
             $_SESSION['login_userId']   = $row['userID'];
 
-            header("location: items.php");
+            //header("location: items.php");
+            echo 'true';
         } else {
-            echo '<script type="text/javascript">alert("You entered wrong login information, please try again.", "error");
-                            window.location.href="index.php";</script>';
+            echo 'You entered wrong login information, please try again';
         }
 
     } else {

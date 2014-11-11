@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" href="resources/templates/assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="resources/templates/assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="resources/templates/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css">
+    <link rel="stylesheet" type="text/css" href="resources/templates/assets/css/invoiceFormAdmin.css"/>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script type="text/javascript" src="resources/templates/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="http://cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+    <script src="resources/templates/assets/js/jquery.form-validator.min.js"></script>
+    <script src="resources/templates/assets/js/invoiceFormAdminLogin.js"></script>
 
 </head>
 
@@ -32,17 +32,17 @@
       <h3><center><img src="resources/templates/img/logo.png" /> &trade;</center></h3><br/>
       
       <div class="error-msg alert alert-danger" id="error-msg" style="display:none;">You have entered a invalid login.</div>
-      <div class="success-msg alert alert-success" id="success-msg" style="display:none;">You have logged in. Please wait... <div class="loading"></div></div>
+      <div class="success-msg alert alert-success" id="success-msg" style="display:none;">You have logged in. Please wait... </div>
       
       <div class="form-group">
         <div>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Your username" data-validation="required"  data-validation-error-msg="Please enter your username." autocomplete="off" required>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Your username" data-validation="required"  data-validation-error-msg="Please enter your username." autocomplete="off">
         </div>
       </div>
 
       <div class="form-group">
         <div>
-          <input type="password" class="form-control" id="password" name="password" placeholder="*********" data-validation="required"  data-validation-error-msg="Please enter your password." autocomplete="off" required>
+          <input type="password" class="form-control" id="password" name="password" placeholder="*********" data-validation="required"  data-validation-error-msg="Please enter your password." autocomplete="off">
         </div>
       </div>
 

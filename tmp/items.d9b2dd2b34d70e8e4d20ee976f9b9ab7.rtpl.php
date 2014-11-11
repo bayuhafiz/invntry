@@ -28,7 +28,7 @@
 
           <?php if( $items != '' ){ ?>
 
-            <table class="table table-hover table-striped" id="example">
+            <table class="table table-hover table-striped" id="example" >
               <thead>
                 <tr>
                   <th></th>

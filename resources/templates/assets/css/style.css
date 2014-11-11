@@ -48,6 +48,27 @@ body {
 	padding-left: 45px;
 }
 
+@media (max-width: 1381px) {
+	.navbar-default .navbar-nav > li > a{
+		padding-right: 35px;
+		padding-left: 35px;
+	}
+}
+
+@media (max-width: 1248px) {
+	.navbar-default .navbar-nav > li > a{
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+}
+
+@media (max-width: 1115px) {
+	.navbar-default .navbar-nav > li > a{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
 .btn-action{
 	padding-right: 7px; 
 	cursor: pointer;
@@ -202,8 +223,9 @@ button{
 }
 
 #tableItemPrice{
-	width: 25%;
+	width: 60%;
 	height: 95%;
+	text-align: center;
 }
 
 
@@ -222,4 +244,6 @@ button{
     -ms-touch-action: none;
     touch-action: none;
 }
+
+
 

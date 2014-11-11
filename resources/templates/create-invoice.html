@@ -41,25 +41,25 @@
             </div>
         </div>
         <div class="row row-centered" style="margin-bottom:30px;">
-            <div class="col-lg-5" style="left: 100px; text-align: left;">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px; text-align: left;">
                 <h5 class="bold" style="text-transform: uppercase;">{$userFullname}</h5>
                 <p>{$userCompanyname}</p>
                 <p>{$invoiceAddress}</p>
                 <input type="hidden" name="userID" value="{$userID}">
             </div>
-             <div class="col-lg-5" id="invoice_address_to" name="invoice_address_to" style="left: 100px;text-align: right;">
+             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="invoice_address_to" name="invoice_address_to" style="left: 100px;text-align: right;">
                 <input type="text" name="invoice_name_to" id="invoice_name_to" class="bold" style="text-align: right;text-transform:uppercase;" disabled="disabled"><br />
                 <textarea id="invoice_address_to" name="invoice_address_to" rows="8" cols="35" style="text-align:right;resize: none;overflow:hidden;" disabled="disabled">
                 </textarea>
             </div>
         </div>
         <div class="row row-centered" style="margin-bottom:30px;">
-            <div class="col-lg-5" style="left: 100px;text-align: left;">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px;text-align: left;">
                 <h2>INVOICE</h2>
                 <p>Invoice ID: {$invoiceNr}</p>
                 <input type="hidden" name="invoiceNr" value="{$invoiceNr}">
             </div>
-             <div class="col-lg-5" style="left: 100px;top:15px;text-align: right;">
+             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px;top:15px;text-align: right;">
                 <h5>Invoice date: 
                     <input type="text" name="invoice_date" value="{$invoiceDate}" class="datepicker" id="startDate" data-date-format="MM dd, yyyy" style="text-align:right; width:130px;">
                 </h5>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="row row-centered">
-            <div class="col-lg-10 col-centered">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-centered">
                 <div class="table-responsive">
                     <table class="table table-hover" id="invoice1">
                         <thead>
@@ -104,7 +104,7 @@
                                         <i class="validation"></i>
                                         <input type="hidden" name="hiddenItemQty[]" class="hiddenItemQty" value="{$value.itemQuantity}">
                                     </td>
-                                    <td>{$currency} 
+                                    <td>
                                         <span id="tableItemTotal" class="totalItem itemTotal">{$value.itemTotal}</span>
                                         <input type="hidden" id="hiddenItemTotal" class="totalItem" name="itemTotal[]" value="{$value.itemTotal}">
                                     </td>
@@ -131,14 +131,14 @@
 
 
         <div class="row row-centered">
-            <div class="col-lg-4" style="left: 100px;text-align: left;">
+            <div class="col-lg-3" style="left: 100px;text-align: left;">
                 <p>Bank:<br/>
                 {$bankAccount}</p>
             </div>
-            <div class="col-lg-4" style="text-align: float:right;right;border-right:1px solid #181818;">
-                <h6>SUBTOTAL {$currency} <span id="subTotal" class="subTotal"> 0</span></h6>
+            <div class="col-lg-4" style="text-align:right;border-right:1px solid #181818;">
+                <h5>SUBTOTAL {$currency} <span id="subTotal" class="subTotal"> 0</span></h5>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" name="subTotal">
-                <h6>TAXES/FEES
+                <h5>TAXES/FEES
                     <select class="taxes" name="taxes" id="taxes">
                          <option value="0">Select Rate</option>
                         {loop="invoiceTaxes"}
@@ -146,10 +146,10 @@
                         {/loop}
                     </select> 
                     {$currency} <span class="taxesValue" id="taxValue"> 0</span>
-                </h6>
+                </h5>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue">
             </div>
-            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem">{$currency} <span id="sumTotal">0</span></h1>
                 <input type="hidden" class="sumTotal" name="sumTotal" id="sumTotalHidden">
             </div>

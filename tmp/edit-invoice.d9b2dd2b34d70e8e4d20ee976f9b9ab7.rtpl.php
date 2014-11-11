@@ -110,12 +110,16 @@
 
                                 <tr>
                                     <td>
+                                        <!--<select name="itemName[]" data-placeholder="Choose an item..." class="chosen-select" style="width:200px;" tabindex="2">
+                                            <option value=""></option>
+                                            <option value="<?php echo $value1["itemName"];?>" class="tableItemName" id="tableItemName" selected><?php echo $value1["itemName"];?></option>
+                                          </select>-->
                                         <input type="text" name="itemName[]" class="tableItemName" id="tableItemName" value="<?php echo $value1["itemName"];?>" placeholder="item" required>
                                     </td>
                                     <td>
                                         <input type="text" name="itemDescription[]" class="tableItemDescription" id="tableItemDescription" value="<?php echo $value1["itemDescription"];?>" placeholder="description" required>
                                     </td>
-                                    <td><?php echo $currency;?> <input type="text" name="itemPrice[]" id="tableItemPrice" class="itemPrice tableItemPrice" value="<?php echo $value1["itemPrice"];?>" placeholder="0">
+                                    <td><input type="text" name="itemPrice[]" id="tableItemPrice" class="itemPrice tableItemPrice" value="<?php echo $value1["itemPrice"];?>" placeholder="0">
                                     </td>
                                     <td>
                                         <input type="text" name="itemQuantity[]" id="tableItemQuantity" class="itemQuantity itemNumeric tableItemQuantity" value="<?php echo $value1["itemQuantity"];?>" placeholder="0">
@@ -124,7 +128,7 @@
                                         <input type="hidden" name="hiddenItemQty[]" class="hiddenItemQty" value="<?php echo $value1["hiddenQty"];?>">
                                         <input type="hidden" name="hiddenSavedQty[]" class="hiddenSavedQty" value="<?php echo $value1["itemQuantity"];?>">
                                     </td>
-                                    <td><?php echo $currency;?> 
+                                    <td>
                                         <span id="tableItemTotal" class="totalItem itemTotal"><?php echo $value1["itemPriceTotal"];?></span>
                                         <input type="hidden" class="totalItem<?php echo $value1["itemID"];?>" name="itemTotal[]" value="<?php echo $value1["itemPriceTotal"];?>" placeholder="0">
                                         
@@ -150,14 +154,14 @@
             </div>
         </div>
         <div class="row row-centered">
-            <div class="col-lg-4" style="left: 100px;text-align: left;">
+            <div class="col-lg-3" style="left: 100px;text-align: left;">
                 <p>Bank:<br/>
                 <?php echo $bankAccount;?></p>
             </div>
-            <div class="col-lg-4" style="text-align: float:right;right;border-right:1px solid #181818;">
-                <h6>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"><?php echo $invoiceSubtotal;?></span></h6>
+            <div class="col-lg-4" style="text-align:right;border-right:1px solid #181818;">
+                <h5>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"><?php echo $invoiceSubtotal;?></span></h5>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" value="" name="subTotal">
-                <h6>TAXES/FEES
+                <h5>TAXES/FEES
                     <select class="taxes" name="taxes" id="taxes">
                          <option value="0">Select Tax Rate</option>
                         <?php $counter1=-1; if( isset($taxes) && is_array($taxes) && sizeof($taxes) ) foreach( $taxes as $key1 => $value1 ){ $counter1++; ?>
@@ -174,10 +178,10 @@
 
                     </select> 
                     <?php echo $currency;?> <span class="taxesValue" id="taxValue"> <?php echo $invoiceTax;?></span>
-                </h6>
+                </h5>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue" value="<?php echo $invoiceTax;?>">
             </div>
-            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem"><?php echo $currency;?> <span id="sumTotal"><?php echo $invoiceTotal;?></span></h1>
                 <input type="hidden" class="sumTotal" id="sumTotalHidden" value="" name="sumTotal">
             </div>

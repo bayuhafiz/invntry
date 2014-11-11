@@ -44,25 +44,25 @@
             </div>
         </div>
         <div class="row row-centered" style="margin-bottom:30px;">
-            <div class="col-lg-5" style="left: 100px; text-align: left;">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px; text-align: left;">
                 <h5 class="bold" style="text-transform: uppercase;"><?php echo $userFullname;?></h5>
                 <p><?php echo $userCompanyname;?></p>
                 <p><?php echo $invoiceAddress;?></p>
                 <input type="hidden" name="userID" value="<?php echo $userID;?>">
             </div>
-             <div class="col-lg-5" id="invoice_address_to" name="invoice_address_to" style="left: 100px;text-align: right;">
+             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" id="invoice_address_to" name="invoice_address_to" style="left: 100px;text-align: right;">
                 <input type="text" name="invoice_name_to" id="invoice_name_to" class="bold" style="text-align: right;text-transform:uppercase;" disabled="disabled"><br />
                 <textarea id="invoice_address_to" name="invoice_address_to" rows="8" cols="35" style="text-align:right;resize: none;overflow:hidden;" disabled="disabled">
                 </textarea>
             </div>
         </div>
         <div class="row row-centered" style="margin-bottom:30px;">
-            <div class="col-lg-5" style="left: 100px;text-align: left;">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px;text-align: left;">
                 <h2>INVOICE</h2>
                 <p>Invoice ID: <?php echo $invoiceNr;?></p>
                 <input type="hidden" name="invoiceNr" value="<?php echo $invoiceNr;?>">
             </div>
-             <div class="col-lg-5" style="left: 100px;top:15px;text-align: right;">
+             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="left: 100px;top:15px;text-align: right;">
                 <h5>Invoice date: 
                     <input type="text" name="invoice_date" value="<?php echo $invoiceDate;?>" class="datepicker" id="startDate" data-date-format="MM dd, yyyy" style="text-align:right; width:130px;">
                 </h5>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="row row-centered">
-            <div class="col-lg-10 col-centered">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-centered">
                 <div class="table-responsive">
                     <table class="table table-hover" id="invoice1">
                         <thead>
@@ -109,7 +109,7 @@
                                         <i class="validation"></i>
                                         <input type="hidden" name="hiddenItemQty[]" class="hiddenItemQty" value="<?php echo $value1["itemQuantity"];?>">
                                     </td>
-                                    <td><?php echo $currency;?> 
+                                    <td>
                                         <span id="tableItemTotal" class="totalItem itemTotal"><?php echo $value1["itemTotal"];?></span>
                                         <input type="hidden" id="hiddenItemTotal" class="totalItem" name="itemTotal[]" value="<?php echo $value1["itemTotal"];?>">
                                     </td>
@@ -142,7 +142,7 @@
                 <p>Bank:<br/>
                 <?php echo $bankAccount;?></p>
             </div>
-            <div class="col-lg-4" style="text-align: float:right;right;border-right:1px solid #181818;">
+            <div class="col-lg-3" style="text-align:right;border-right:1px solid #181818;">
                 <h6>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"> 0</span></h6>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" name="subTotal">
                 <h6>TAXES/FEES
@@ -158,7 +158,7 @@
                 </h6>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue">
             </div>
-            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem"><?php echo $currency;?> <span id="sumTotal">0</span></h1>
                 <input type="hidden" class="sumTotal" name="sumTotal" id="sumTotalHidden">
             </div>

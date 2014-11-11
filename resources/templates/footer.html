@@ -20,7 +20,7 @@
 
         var ac_config = { 
             source: "ajaxItems.php", 
-            select: function(event, ui){ 
+            select: function(event, ui, data){ 
                 
                     var newItemName = $(this).parent().parent().children().children("input.tableItemName").val(ui.item.name);
                     var newItemDesc = $(this).parent().parent().children().children("input.tableItemDescription").val(ui.item.desc); 
@@ -29,11 +29,14 @@
                     var newItemID = $(this).parent().parent().children().children("input.hiddenItemID").val(ui.item.id);
                     var newHiddenItemInf = $(this).parent().parent().children().children("input.hiddenItemInf").val(ui.item.inf); 
 
+                    
                     $(this).parent().parent().children().children("input.tableItemName").attr('value', newItemName.val());
                     $(this).parent().parent().children().children("input.tableItemDescription").attr('value', newItemDesc.val());
                     $(this).parent().parent().children().children("input.tableItemPrice").attr('value', newItemPrice.val());
                     $(this).parent().parent().children().children("input.tableItemQuantity").attr('value', newItemQty.val());
                     $(this).parent().parent().children().children("input.hiddenItemInf").attr('value', newHiddenItemInf.val());
+
+
 
                     $(this).parent().parent().children().children("input.hiddenItemID").attr('value', newItemID.val());
                     $(this).parent().parent().children().children("input.hiddenItemQty").attr('value', newItemQty.val());
@@ -58,6 +61,22 @@
             }, 
             minLength:1 
         }; 
+
+        ////////// Chosen /////////////
+
+        var config = {
+          '.chosen-select'           : {},
+          '.chosen-select-deselect'  : {allow_single_deselect:true},
+          '.chosen-select-no-single' : {disable_search_threshold:10},
+          '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+          '.chosen-select-width'     : {width:"95%"}
+        }
+        for (var selector in config) {
+          $(selector).chosen(config[selector]);
+        }
+
+        ////// End Chosen ////////
+
         
         $(".tableItemName").autocomplete(ac_config);
 

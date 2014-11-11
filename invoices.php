@@ -98,7 +98,7 @@ if (isset($_GET['action'])) {
 
 
 
-$query = mysqli_query($db, "SELECT * FROM invntry_invoices WHERE deleted=0 ORDER BY invoiceDate DESC") or die(mysqli_error($db));
+$query = mysqli_query($db, "SELECT * FROM invntry_invoices WHERE deleted=0 ORDER BY invoiceDate ASC") or die(mysqli_error($db));
 $result = mysqli_num_rows($query);
 
 if ($result == 0) {
@@ -117,11 +117,12 @@ if ($result == 0) {
             'invoiceNr'=>$fetch['invoiceNr'],
             'invoiceDate'=>$fetch['invoiceDate'],
             'invoiceDuedate'=>$fetch['invoiceDuedate'],
+            'invoiceClientID'=>$fetch['invoiceClientID'],
             'invoiceClient'=>$fetch['invoiceClientName'],
             'invoiceAmount'=> number_format($fetch['invoiceTotal'], 2),
             'invoiceStatus'=>$invoiceStatus,
             'currency' => getCurrency($db, $_SESSION['login_userId']),
-        );
+            );
     } 
 }
     
