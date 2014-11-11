@@ -20,7 +20,7 @@
 
         var ac_config = { 
             source: "ajaxItems.php", 
-            select: function(event, ui, data){ 
+            select: function(event, ui){ 
                 
                     var newItemName = $(this).parent().parent().children().children("input.tableItemName").val(ui.item.name);
                     var newItemDesc = $(this).parent().parent().children().children("input.tableItemDescription").val(ui.item.desc); 
@@ -29,7 +29,7 @@
                     var newItemID = $(this).parent().parent().children().children("input.hiddenItemID").val(ui.item.id);
                     var newHiddenItemInf = $(this).parent().parent().children().children("input.hiddenItemInf").val(ui.item.inf); 
 
-                    
+
                     $(this).parent().parent().children().children("input.tableItemName").attr('value', newItemName.val());
                     $(this).parent().parent().children().children("input.tableItemDescription").attr('value', newItemDesc.val());
                     $(this).parent().parent().children().children("input.tableItemPrice").attr('value', newItemPrice.val());
