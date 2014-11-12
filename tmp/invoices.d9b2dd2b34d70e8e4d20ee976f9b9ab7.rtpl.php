@@ -24,7 +24,7 @@
       
         <?php if( $invoices != '' ){ ?>
 
-        <table class="table table-hover table-striped" id="example">
+        <table class="table table-hover table-striped" id="example" style="width: 1050px;">
           <thead>
             <tr>
               <th>CLIENT NAME</th>

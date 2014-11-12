@@ -327,7 +327,10 @@
         $('#example').dataTable({
             "bPaginate": false,
             "bSort" : false,
-            responsive: true
+            responsive: true,
+            "oLanguage": {
+                "sProcessing": "<img src='assets/img/ajax-loader.gif'>"
+            }
         });
      
         // DataTable
