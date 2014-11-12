@@ -1,7 +1,7 @@
 <?php if(!class_exists('raintpl')){exit;}?><?php $tpl = new RainTPL;$tpl_dir_temp = self::$tpl_dir;$tpl->assign( $this->var );$tpl->draw( dirname("header") . ( substr("header",-1,1) != "/" ? "/" : "" ) . basename("header") );?>
 
   <div class="row row-centered">
-    <div class="col-lg-8 col-centered">
+    <div class="col-lg-9 col-centered">
       <div class="table-responsive">
         <?php if( $successMsg != '' ){ ?>
 
@@ -24,7 +24,7 @@
       
         <?php if( $invoices != '' ){ ?>
 
-        <table class="table table-hover table-striped" id="example" style="width: 1050px;">
+        <table class="table table-hover table-striped" id="example" >
           <thead>
             <tr>
               <th>CLIENT NAME</th>

@@ -361,8 +361,8 @@
               <li class="dropdown <?php if( $page == 'settings' ){ ?>active<?php } ?> <?php if( $page == 'categories' ){ ?>active<?php } ?> <?php if( $page == 'taxes' ){ ?>active<?php } ?>" >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings&nbsp;&nbsp;<i class="fa fa-angle-down" style="width: 16px;height: 16px;border: 1px solid #178cd9;border-radius: 50%;text-align:center;color:#178cd9;"></i> </a>
                 <ul class="dropdown-menu">
-                  <li><a href="categories.php">Category</a></li>
                   <li><a href="settings.php">Invoice</a></li>
+                  <li><a href="categories.php">Category</a></li>
                   <li><a href="taxes.php">Taxes</a></li>
                 </ul>
               </li>
