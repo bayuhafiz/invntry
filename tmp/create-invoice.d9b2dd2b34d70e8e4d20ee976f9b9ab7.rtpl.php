@@ -138,14 +138,14 @@
 
 
         <div class="row row-centered">
-            <div class="col-lg-4" style="left: 100px;text-align: left;">
+            <div class="col-lg-3" style="left: 100px;text-align: left;">
                 <p>Bank:<br/>
                 <?php echo $bankAccount;?></p>
             </div>
-            <div class="col-lg-3" style="text-align:right;border-right:1px solid #181818;">
-                <h6>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"> 0</span></h6>
+            <div class="col-lg-5" style="text-align:right;border-right:1px solid #181818;">
+                <h5>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"> 0</span></h5>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" name="subTotal">
-                <h6>TAXES/FEES
+                <h5>TAXES/FEES
                     <select class="taxes" name="taxes" id="taxes">
                          <option value="0">Select Rate</option>
                         <?php $counter1=-1; if( isset($invoiceTaxes) && is_array($invoiceTaxes) && sizeof($invoiceTaxes) ) foreach( $invoiceTaxes as $key1 => $value1 ){ $counter1++; ?>
@@ -155,10 +155,10 @@
 
                     </select> 
                     <?php echo $currency;?> <span class="taxesValue" id="taxValue"> 0</span>
-                </h6>
+                </h5>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue">
             </div>
-            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem"><?php echo $currency;?> <span id="sumTotal">0</span></h1>
                 <input type="hidden" class="sumTotal" name="sumTotal" id="sumTotalHidden">
             </div>

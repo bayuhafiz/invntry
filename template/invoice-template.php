@@ -14,8 +14,6 @@ if (isset($_POST['Submit'])) {
     if (!isset($notes)) { $notes = ''; }
     if (!isset($currency)) { $currency = ''; }
 
-    echo $currency;
-
     $html = utf8_encode('
             <html>
                 <head>
@@ -101,13 +99,13 @@ if (isset($_POST['Submit'])) {
                                                     '.makeSafe($item_desc[$a]).'
                                                 </td>
                                                 <td style="border-top: 0;padding-bottom: 10px;padding-top: 20px;">
-                                                    '.utf8_decode($currency).''.makeSafe($item_price[$a]).'
+                                                    '.$currency.''.makeSafe($item_price[$a]).'
                                                 </td>
                                                 <td style="border-top: 0;padding-bottom: 10px;padding-top: 20px;text-align:center">
                                                     '.makeSafe($item_qty[$a]).'
                                                 </td>
                                                 <td class="totalItem itemTotal" style="border-top: 0;padding-bottom: 10px;padding-top: 20px;padding-right:20px;text-align:right">
-                                                    '.utf8_decode($currency).''.makeSafe($item_qty[$a] * $item_price[$a]).'
+                                                    '.$currency.''.makeSafe($item_qty[$a] * $item_price[$a]).'
                                                 </td>
                                             </tr>
             ');
@@ -127,8 +125,8 @@ if (isset($_POST['Submit'])) {
                             '. $bank_account .'</p>
                         </div>
                         <div class="col-xs-4" style="padding-top:15px;">
-                            <h6>SUBTOTAL '.$currency.' '.$invoice_subtotal.'</h6>
-                            <h6>TAXES/FEES '.$invoice_taxrate.' % '.$currency.' '.makeSafe($invoice_subtotal + $invoice_tax - $invoice_subtotal).'</h6>
+                            <h6>SUBTOTAL '.$currency.''.$invoice_subtotal.'</h6>
+                            <h6>TAXES/FEES '.$invoice_taxrate.' % '.$currency.''.makeSafe($invoice_subtotal + $invoice_tax - $invoice_subtotal).'</h6>
                         </div>
                         <div class="col-lg-5" style="text-align:right;color:#178cd9;">
                             <h2 class="sumItem" style="font-weight:bold;">'.$currency.''.makeSafe($invoice_subtotal + $invoice_tax).'</h2>

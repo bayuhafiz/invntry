@@ -158,7 +158,7 @@
                 <p>Bank:<br/>
                 <?php echo $bankAccount;?></p>
             </div>
-            <div class="col-lg-4" style="text-align:right;border-right:1px solid #181818;">
+            <div class="col-lg-5" style="text-align:right;border-right:1px solid #181818;">
                 <h5>SUBTOTAL <?php echo $currency;?> <span id="subTotal" class="subTotal"><?php echo $invoiceSubtotal;?></span></h5>
                 <input type="hidden" id="subTotalHidden" class="subTotalHidden" value="" name="subTotal">
                 <h5>TAXES/FEES
@@ -181,7 +181,7 @@
                 </h5>
                 <input type="hidden" class="taxesValueHidden" id="taxesValueHidden" name="taxesValue" value="<?php echo $invoiceTax;?>">
             </div>
-            <div class="col-lg-5" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
+            <div class="col-lg-4" style="top:-15px;padding-right: 108px;text-align: right;color:#178cd9">
                 <h1 class="sumItem"><?php echo $currency;?> <span id="sumTotal"><?php echo $invoiceTotal;?></span></h1>
                 <input type="hidden" class="sumTotal" id="sumTotalHidden" value="" name="sumTotal">
             </div>

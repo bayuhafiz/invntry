@@ -286,7 +286,7 @@ function generateInvoice($userID,
         include_once 'resources/libraries/MPDF57/mpdf.php';
         
         // create new mPDF
-        $mpdf = new mPDF(); 
+        $mpdf = new mPDF('utf-8'); 
         
         //$mpdf->setFooter('{PAGENO}');
         $mpdf->WriteHTML($html);

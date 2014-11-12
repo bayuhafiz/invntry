@@ -245,5 +245,7 @@ button{
     touch-action: none;
 }
 
-
-
+.sumItem
+{
+	font-size: 45px;
+}
