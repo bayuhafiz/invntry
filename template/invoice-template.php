@@ -14,6 +14,8 @@ if (isset($_POST['Submit'])) {
     if (!isset($notes)) { $notes = ''; }
     if (!isset($currency)) { $currency = ''; }
 
+    echo $currency;
+
     $html = utf8_encode('
             <html>
                 <head>
@@ -99,13 +101,13 @@ if (isset($_POST['Submit'])) {
                                                     '.makeSafe($item_desc[$a]).'
                                                 </td>
                                                 <td style="border-top: 0;padding-bottom: 10px;padding-top: 20px;">
-                                                    '.$currency.' '.makeSafe($item_price[$a]).'
+                                                    '.utf8_decode($currency).''.makeSafe($item_price[$a]).'
                                                 </td>
                                                 <td style="border-top: 0;padding-bottom: 10px;padding-top: 20px;text-align:center">
                                                     '.makeSafe($item_qty[$a]).'
                                                 </td>
                                                 <td class="totalItem itemTotal" style="border-top: 0;padding-bottom: 10px;padding-top: 20px;padding-right:20px;text-align:right">
-                                                    '.$currency.' '.makeSafe($item_qty[$a] * $item_price[$a]).'
+                                                    '.utf8_decode($currency).''.makeSafe($item_qty[$a] * $item_price[$a]).'
                                                 </td>
                                             </tr>
             ');
