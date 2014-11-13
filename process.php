@@ -179,25 +179,6 @@ function generateInvoice($userID,
         }
 
 
-        // item's quantity adjusting process
-        /* $q1 = mysqli_query($db, "SELECT itemID, itemQty FROM invntry_invoices_items WHERE invoiceID='".mysqli_real_escape_string($db, $invoiceID)."'") or die(mysql_error($db));
-        while ($delItem = mysqli_fetch_assoc($q1)) {
-
-            $temp_id = $delItem['itemID'];
-            $temp_qty = $delItem['itemQty'];
-
-            $q2 = mysqli_query($db, "SELECT itemQuantity, infinity FROM invntry_items WHERE itemID = '$temp_id'") or die(mysql_error($db));
-            $fetch2 = mysqli_fetch_array($q2, MYSQLI_ASSOC);
-
-            if ($fetch2['infinity'] == '0') {
-
-                $inv_qty = $fetch2['itemQuantity'];
-                $new_qty = $temp_qty + $inv_qty;
-                mysqli_query($db, "UPDATE invntry_items SET itemQuantity = '$new_qty' WHERE itemID = '$temp_id'");
-
-            }
-        } */
-
         // delete current invoice items
         mysqli_query($db, "DELETE FROM invntry_invoices_items WHERE invoiceID='".mysqli_real_escape_string($db, $invoiceID)."'");
         
